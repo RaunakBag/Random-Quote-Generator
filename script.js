@@ -1,7 +1,7 @@
 const text = document.querySelector('.text');
 const auth = document.querySelector('.author');
-const nextBtn = document.querySelector('.next');
-const shareBtn = document.querySelector('.twitter-share-button');
+const shareBtn = document.getElementById('share-button');
+const buttons = document.querySelector('.buttons');
 
 async function getQuotes() {
     const res = await fetch(
@@ -21,9 +21,11 @@ async function getQuote() {
     const author = quoteOb.author;
     text.innerText = quote;
     auth.innerText = author;
-    shareBtn.href="https://twitter.com/intent/tweet/?text=" + quote;
+    buttons.innerHTML = `
+    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=${quote}" rel="noopener noreferrer"><img src="twitter.svg" alt=""></a>
+    <button class="next">Next</button>
+    `;
+    document.querySelector('.next').addEventListener('click', getQuote);
 }
 
 getQuote();
-
-nextBtn.addEventListener('click', getQuote)
