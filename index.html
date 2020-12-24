@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title>Quote Generator</title>
 </head>
 <body>
-    <a href="https://twitter.com/thefierycoder?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @thefierycoder</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <div class="container">
-        <img src="quote.svg" alt="">
-        <h1 class="text"></h1>
+        <i class="fas fa-quote-left"></i>
+        <h1 class="quote"></h1>
         <hr>
         <p class="author"></p>
-        <div class="buttons"></div>
+        <div class="buttons">
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Merry%20Christmas" data-size="large" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i>Tweet</a>
+            <button class="next">Next</button>
+        </div>
     </div>
-    <script src="script.js" defer></script>
+    <div class="loader">
+        <img src="loader.svg" alt="loader">
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
